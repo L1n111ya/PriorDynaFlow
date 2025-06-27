@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: mainagent
+Version: 0.1.0
+Author: yilin
+Author-email: 
+Requires-Python: >=3.8
+License-File: LICENSE
