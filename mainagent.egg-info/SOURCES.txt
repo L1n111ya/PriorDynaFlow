@@ -1,7 +1,0 @@
-LICENSE
-README.md
-setup.py
-mainagent.egg-info/PKG-INFO
-mainagent.egg-info/SOURCES.txt
-mainagent.egg-info/dependency_links.txt
-mainagent.egg-info/top_level.txt
