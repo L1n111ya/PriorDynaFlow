@@ -4,12 +4,12 @@ import json
 import random
 
 
-from mainagent.llm import get_llm
-from mainagent.agent.mainagent import MainAgent
-from mainagent.agent.math_agent import MathSolverAgent, MathematicalAnalystAgent, ProgrammingExpertAgent, InspectorAgent
-from mainagent.prompt.system_prompt import MATH_SYSTEM_PROMPT
-from mainagent.tools.math.math_eq import math_equal
-from mainagent.tools.reader import load_jsonl
+from PriorDynaFlow.llm import get_llm
+from PriorDynaFlow.agent.mainflow import PriorDynaFlow
+from PriorDynaFlow.agent.math_agent import MathSolverAgent, MathematicalAnalystAgent, ProgrammingExpertAgent, InspectorAgent
+from PriorDynaFlow.prompt.system_prompt import MATH_SYSTEM_PROMPT
+from PriorDynaFlow.tools.math.math_eq import math_equal
+from PriorDynaFlow.tools.reader import load_jsonl
 
 
 if __name__ == "__main__":
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     agent_3 = ProgrammingExpertAgent(LLM, MATH_SYSTEM_PROMPT, "ProgrammingExpertAgent")
     agent_4 = InspectorAgent(LLM, MATH_SYSTEM_PROMPT, "InspectorAgent")
 
-    agent = MainAgent()
+    agent = PriorDynaFlow()
 
     agent.register_node("MathSolverAgent", agent_1, is_start=True)
     agent.register_node("MathematicalAnalystAgent", agent_2)

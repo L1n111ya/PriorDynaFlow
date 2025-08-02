@@ -2,13 +2,13 @@ import os
 import random
 
 
-from mainagent.llm import get_llm
-from mainagent.agent.mainagent import MainAgent
-from mainagent.agent.all_agent import *
-from mainagent.prompt.system_prompt import ALL_SYSTEM_PROMPT
-from mainagent.tools.math.math_eq import math_equal
-from mainagent.tools.reader import load_jsonl
-from mainagent.tools.writer import write_jsonl
+from PriorDynaFlow.llm import get_llm
+from PriorDynaFlow.agent.mainflow import PriorDynaFlow
+from PriorDynaFlow.agent.general_agent import *
+from PriorDynaFlow.prompt.system_prompt import ALL_SYSTEM_PROMPT
+from PriorDynaFlow.tools.math.math_eq import math_equal
+from PriorDynaFlow.tools.reader import load_jsonl
+from PriorDynaFlow.tools.writer import write_jsonl
 
 if __name__ == "__main__":
     LLM = get_llm("qwen-max-latest")
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     agent_5 = CodeAuditorAgent(LLM, ALL_SYSTEM_PROMPT, "CodeAuditorAgent")
     agent_6 = TestEngineerAgent(LLM, ALL_SYSTEM_PROMPT, "TestEngineerAgent")
 
-    agent = MainAgent()
+    agent = PriorDynaFlow()
 
     agent.register_node("PlanAgent", agent_1, is_start=True)
     agent.register_node("AnalystAgent", agent_2)

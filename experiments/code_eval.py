@@ -1,13 +1,13 @@
 import os
 import random
 
-from mainagent.tools.writer import write_jsonl
-from mainagent.llm import get_llm
-from mainagent.agent.mainagent import MainAgent
-from mainagent.agent.code_agent import PlanNode, ResearchNode, GeneratorNode, CodeReviewNode, TestNode
-from mainagent.prompt.system_prompt import CODE_SYSTEM_PROMPT
-from mainagent.tools.coding.python_executor import PyExecutor
-from mainagent.tools.reader import JSONLReader
+from PriorDynaFlow.tools.writer import write_jsonl
+from PriorDynaFlow.llm import get_llm
+from PriorDynaFlow.agent.mainflow import PriorDynaFlow
+from PriorDynaFlow.agent.code_agent import PlanNode, ResearchNode, GeneratorNode, CodeReviewNode, TestNode
+from PriorDynaFlow.prompt.system_prompt import CODE_SYSTEM_PROMPT
+from PriorDynaFlow.tools.coding.python_executor import PyExecutor
+from PriorDynaFlow.tools.reader import JSONLReader
 
 if __name__ == "__main__":
     LLM = get_llm("qwen-max-latest")
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     agent_4 = CodeReviewNode(llm=LLM, system_prompt=CODE_SYSTEM_PROMPT, name="code_review_node")
     agent_5 = TestNode(llm=LLM, system_prompt=CODE_SYSTEM_PROMPT, name="test_node")
 
-    agent = MainAgent()
+    agent = PriorDynaFlow()
 
     agent.register_node("plan_node", agent_1, is_start=True)
     agent.register_node("research_node", agent_2)

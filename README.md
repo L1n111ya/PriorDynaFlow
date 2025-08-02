@@ -1,4 +1,4 @@
-# MAINAGENT--A Priori Dynamic Workflow Construction via Multi-Agent Collaboration
+# MAINA(P)rior(D)yna(F)lowGENT--A Priori Dynamic Workflow Construction via Multi-Agent Collaboration
 
 ### 🚀Quick Start
 #### Install Packages
@@ -10,15 +10,15 @@ pip3 install -e .
 
 #### Set Environment Variables
  **OpenAI API Configuration**  
-Firstly, set your settings in the ```mainagent/llm.py``` file.
+Firstly, set your settings in the ```PriorDynaFlow/llm.py``` file.
 ```python
 base_url = "" # The endpoint of your OPENAI API
 api_key = "" # Your OPENAI API KEY
 ```
 **Configuration**  
-Then, set your configuration in the ```mainagent/config. py``` file.
+Then, set your configuration in the ```PriorDynaFlow/config. py``` file.
 ```python
-# YOUR MAINAGENT SETTINGS
+# YOUR PriorDynaFlow SETTINGS
 ...
 # YOUR Q-Learning SETTINGS
 ...
@@ -35,7 +35,8 @@ The structure of the experiment in the paper is as follows:
 experiment
     |-data
         |-humaneval-py.jsonl
-        └──gsm8k.jsonl
+        └──gsm8k_eval.jsonl
+        ...
     |-results
     |-code_eval.py
     └──mathset_eval.py   
@@ -43,11 +44,11 @@ experiment
 ```
 You can reproduce the experiment of human eval and gsm8k by using the following command:
 ```bash
-python3 code_eval.py  # human eval
-python3 mathset_eval.py # gsm8k
+python3 code_eval.py  # humaneval or mbpp
+python3 mathset_eval.py # gsm8k or math
 ```
 ### 🔗Add new agent
-The basic agent class is ```mainagent/agent/base_agent.py```, which implements the functionality of a universal agent node.
+The basic agent class is ```PriorDynaFlow/agent/base_agent.py```, which implements the functionality of a universal agent node.
 
 **Implement Your Agent Class** 
 
