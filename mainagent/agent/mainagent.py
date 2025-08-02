@@ -16,7 +16,7 @@ from functools import lru_cache
 from mainagent.llm import get_llm
 from mainagent.agent.code_agent import BaseNode
 from mainagent.config import Config
-from mainagent.state import CodeMessageState, MathMessageState
+from mainagent.state import CodeMessageState, HybridMessageState, MathMessageState
 
 from langchain_core.messages import HumanMessage
 from langgraph.graph import END
@@ -494,6 +494,7 @@ class MainAgent:
             completion_token=0,
             next_node=self.start_node
         )
+        
     # def _initialize_state(self, input_text: str) -> MathMessageState:
     #     return MathMessageState(
     #         task=input_text,
@@ -504,6 +505,19 @@ class MainAgent:
     #         completion_token=0,
     #         next_node=self.start_node,
     #         executed_nodes=[],
+    #     )
+    
+    # def _initialize_state(self, input_text: str) -> HybridMessageState:
+    #     return HybridMessageState(
+    #         task=input_text,
+    #         messages=HumanMessage(content=input_text),
+    #         answer="",
+    #         code="",
+    #         feedback="",
+    #         executed_nodes=[],
+    #         prompt_token=0,
+    #         completion_token=0,
+    #         next_node=self.start_node
     #     )
 
 
