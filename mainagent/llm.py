@@ -1,10 +1,8 @@
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage
 
-base_url = 'https://dashscope.aliyuncs.com/compatible-mode/v1'
-# api_key = 'sk-1963b18628cf431c85a5b6ae47b57678'
-# api_key = 'sk-2e622fabc9504b27824e4b55fd44d3b1'
-api_key = 'sk-3af02d21752d43cc96a7f9cebfd4c272'
+base_url = ''
+api_key = ''
 
 
 def get_llm(model_name: str, temperature: float = 0.1, max_tokens: int = 2048):
