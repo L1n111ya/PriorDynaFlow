@@ -24,19 +24,28 @@ class Config:
     MIN_ACTION_REWARD = -50
 
     # 节点薪水配置
-    NODE_SALARIES = {
-        "plan_node": 5,
-        "research_node": 2,
-        "code_generate_node": 5,
-        "code_review_node": 5,
-        "test_node": 5
-    }
+    # NODE_SALARIES = {
+    #     "plan_node": 5,
+    #     "research_node": 2,
+    #     "code_generate_node": 5,
+    #     "code_review_node": 5,
+    #     "test_node": 5
+    # }
     # NODE_SALARIES = {
     #     "MathSolverAgent": 5,
     #     "MathematicalAnalystAgent": 5,
     #     "ProgrammingExpertAgent": 5,
     #     "InspectorAgent": 5
     # }
+    
+    NODE_SALARIES = {
+    "PlanAgent": 5,
+    "AnalystAgent": 5,
+    "ProgrammingAgent": 5,
+    "InspectorAgent": 5,
+    "CodeAuditorAgent": 5,
+    "TestEngineerAgent": 5
+}
 
     # 系统配置
     Q_TABLE_PATH = "../humaneval_q_table_1.pkl"
