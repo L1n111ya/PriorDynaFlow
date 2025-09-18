@@ -1,4 +1,4 @@
-# MAINA(P)rior(D)yna(F)lowGENT--A Priori Dynamic Workflow Construction via Multi-Agent Collaboration
+# (P)rior(D)yna(F)lowGENT--A Priori Dynamic Workflow Construction via Multi-Agent Collaboration
 
 ### 🚀Quick Start
 #### Install Packages
