@@ -73,12 +73,11 @@ class PyExecutor(Executor):
         probably should be written in a dataset-agnostic way but not now
         """
         
-        code = f"""{func}
-
-{test}
-
-check({name})
-    """
+        code = f"""
+        {func} \n
+        {test} \n
+        check({name})
+        """
         try:
             function_with_timeout(exec, (code, globals()), timeout)
             return True
