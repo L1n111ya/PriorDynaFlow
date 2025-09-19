@@ -88,7 +88,6 @@ class QLearningDecisionMaker:
         for node, q in sorted_by_q:
             q_groups[q].append(node)
 
-        #
         top_two_q_values = list(q_groups.keys())[:2]
         best_nodes = []
         for q in top_two_q_values:
